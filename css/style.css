@@ -98,14 +98,44 @@ section >h1 ~ *{
     z-index: 5;
     position: sticky;
     top: 70px;
-     padding: 5vh 0 30vh 0;
+    padding: 5vh 0 30vh 0;
 }
 #projects{
     z-index: 6;
-    position: sticky;
-    top:70px;
-    height: 80vh;
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+    "main";
+    
 }
+#projects >h1{
+    grid-area: title;
+    display: inline-flex;
+    align-items: center;
+}
+#projects > div{
+    grid-area: main;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row ;
+    gap: 5rem;
+    height: 80%;
+    width: 100%; 
+}
+.box{
+ height: 80%;
+ width: 90%;
+ background-color: beige;
+ display: flex;
+ justify-content: center;
+ margin: 0 5% 0 5%;
+ border: 1px solid black;
+}
+
 #contact{
     display: flex;
     justify-content: center;
@@ -137,3 +167,6 @@ section >h1 ~ *{
         scale: 1;
     }
 }
+
+
+
