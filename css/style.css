@@ -46,14 +46,14 @@ h1{
 }
 #right{
     display: flex;
-    gap: 2rem;
+    gap: 10px;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 5vw;
 }
 #right + *{
     margin-left: auto;
-    padding-right: 20px;
+    padding-right: 5vw;
 }
 
 /* main */
@@ -184,8 +184,8 @@ li{
     padding: 0;
 }
 .box{
- height: 80%;
- width: 90%;
+ height: fit-content;
+ width: 80%;
  background-color: var(--text-color);
  display: flex;
  flex-direction: column;
@@ -269,9 +269,10 @@ li{
 
 .btn{
     border: 1px solid;
-    padding: 0.3rem 1rem;
-    max-height: 2rem;
-    max-width: 300px;
+    width: fit-content;
+    height: auto;
+    font-size: 1rem;
+    margin-right: 10px;
 }
   
 .btn:hover{
@@ -280,4 +281,19 @@ li{
 }
   
 
-  
+@media (width<1000px){
+    section{
+        grid-template-columns: auto;
+        grid-template-rows: 100px auto;
+        grid-template-areas: "title"
+        "main";
+    }
+    #projects > div{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        }
+}
