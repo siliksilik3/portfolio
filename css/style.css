@@ -22,7 +22,6 @@ body, html {
 }
 a{
     text-decoration:none;
-    z-index: 10;
     color: rgb(159, 219, 141);
 }
 
@@ -56,19 +55,21 @@ a{
 /* main */
 
 section{
-    padding: 5vh 0 10vh 0;
+    padding-top: 10vh;
     display: grid;
     grid-template-columns: 50vw auto;
     grid-template-areas: "title main";
     color: var(--text-color);
     background-color: var(--background-color);
     min-height: fit-content;
+    height: 100vh;
    
 }
 section > h1{
     color: var(--text-color);
     grid-area: title;
     margin-left: 10vw;
+    text-align: center;
 }
 section >h1 ~ *{
     grid-area: main;
@@ -149,7 +150,7 @@ li{
     z-index: 4;
     position: sticky;
     top: 70px;
-    height: 40vh;
+    height: 50vh;
 }
 #education{
     z-index: 5;
@@ -164,7 +165,7 @@ li{
     width: 100%;
     display: grid;
     grid-template-rows: 10% 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-template-areas: "title"
     "main";  
 }
@@ -219,26 +220,26 @@ li{
 
 
  #contact{
-    min-height: 50vh;
     z-index: 7;
     position: relative;
     bottom: 0;
     width: 100%;
-    padding-left: 10vw;
+    padding: 10vh 0 0 10vh
 }
 #contact > div{
    grid-area: title; 
-   
 }
 
 #contact >div ~ *{
     grid-area: main;
     display: flex;
-    gap: 2rem;
+    height: fit-content;
+    gap: 1rem; 
 }
 
+
 .svg_size{
-    width: 1rem;
+    width: 0.7rem;
     height: auto;
     fill: var(--text-color);
     stroke: var(--btn-color);
@@ -246,10 +247,10 @@ li{
 
 
 /* scroll animation*/
-.block{
+/* .block{
     animation: appear linear;
     animation-timeline: view(); /* use when appear (scrool) CAN SEE*/
-    animation-range: entry 0% cover 10%;
+    /* animation-range: entry 0% cover 10%;
 }
 @keyframes appear{
     0%{
@@ -264,7 +265,7 @@ li{
         opacity: 1;
         scale: 1;
     }
-}
+} */
 
 
 /*btn*/
@@ -327,7 +328,6 @@ li{
     }
     
     #Aleksandrs{
-        
         margin-left: 1vw;
         border: 0.1px solid;
     }
@@ -336,8 +336,8 @@ li{
         font-size: 0.9rem;
     }
     #right{
-        gap: 5px;
-        margin-left: 1vw;
+        gap: 1px;
+        margin:0;
     }
     #right + *{
         padding-right: 1vw;  
