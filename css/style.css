@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Fira Mono', monospace;
-    font-size: 1.1rem;
 }
 :root{
     --text-color: rgb(215, 228, 142);
@@ -20,15 +19,16 @@ html{
 body{
     width: 100%;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
 }
 a{
     text-decoration:none;
     z-index: 10;
     color: rgb(159, 219, 141);
 }
-h1{
-    font-size: 1.8rem;
-}
+
 
 /* nav bar */
 #nav{
@@ -81,6 +81,7 @@ section >h1 ~ *{
     justify-self: start;
     gap: 1vh;
     text-align: center;
+    
 }
 
 
@@ -96,7 +97,7 @@ section >h1 ~ *{
     align-self: center;
     height: auto;
     width: 25%;
-    min-width: 10rem;
+    min-width: 7rem;
     max-width: 16rem;
     border-radius: 50%;
     margin-left: 10vw;
@@ -108,7 +109,6 @@ section >h1 ~ *{
     width: 100%;
     height:  calc(var(--title-size) - 4rem);
     align-self: center;
-    
 }
 #title div > *{ /* inside elements*/
     display: flex;
@@ -164,38 +164,43 @@ li{
     z-index: 6;
     position: relative;
     height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-rows: 10% 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "title"
-    "main";
-    
+    "main";  
 }
 
 #projects > div{
     grid-area: main;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row ;
-    gap: 5rem;
-    height: 80%;
-    width: 100%; 
+    width: 100%;
+    max-height: 30vh;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
 }
 .box{
- height: fit-content;
- width: 80%;
+ margin-top: 10vh;
  background-color: var(--text-color);
- display: flex;
- flex-direction: column;
+ height: fit-content;
+ width: 30vw;
+ padding-bottom: 1vh;
  text-align: center;
- margin: 0 5% 0 5%;
- border: 1px solid black;
- color: rgb(19, 18, 18);
 }
 .box > *{
     color: rgb(27, 24, 24);
+    align-self: center;
+    font-size: 0.5rem;
+}
+.box > svg{
+   width: 60%;
+    height: auto;
+    align-self: flex-start;
+    
 }
 
 
@@ -247,7 +252,7 @@ li{
 .block{
     animation: appear linear;
     animation-timeline: view(); /* use when appear (scrool) CAN SEE*/
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 10%;
 }
 @keyframes appear{
     0%{
@@ -270,30 +275,76 @@ li{
 .btn{
     border: 1px solid;
     width: fit-content;
-    height: auto;
-    font-size: 1rem;
-    margin-right: 10px;
+    padding: 0.2rem;
+    height: 2rem;
+    
 }
   
 .btn:hover{
     transform: scale(1.01);
-    background: radial-gradient(#8a8a8a18, #92929236);;
+    background: radial-gradient(#8a8a8a18, #92929236);
 }
-  
+.x:hover svg{
+    transition-duration: 250ms;
+    transform: rotate(0.25turn);
+}
 
-@media (width<1000px){
+ @media (width<760px){
     section{
         grid-template-columns: auto;
         grid-template-rows: 100px auto;
         grid-template-areas: "title"
         "main";
+        justify-content: center;
+    }
+    section > h1{
+        grid-area: title;
+        align-self: flex-start;
+    
+    }
+    #about > p{
+        text-align: center;
+        text-indent: 1.7rem;
+        padding-right: 3vw;
+    }
+    #projects{
+        gap: 10vh;
+        
+    }
+    #projects > h1{
+
+     justify-self: center;
+     margin-right: 10vw;
     }
     #projects > div{
         grid-area: main;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
-        width: 50%;
         align-items: center;
         justify-content: center;
-        }
-}
+        gap: 10px;
+    }
+    #title div > div{
+        padding-right: 1vw;
+        height: fit-content;
+    }
+    
+    #Aleksandrs{
+        
+        margin-left: 1vw;
+        border: 0.1px solid;
+    }
+    #title{
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    
+    #right{
+        gap: 5px;
+        margin-left: 1vw;
+    }
+    #right + *{
+        padding-right: 1vw;
+    }
+} 
