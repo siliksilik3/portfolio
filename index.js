@@ -18,4 +18,19 @@ function topFunction() {
     })
     }
 
-// 
+//  box animations
+
+const box=document.querySelectorAll(".box");
+
+    document.documentElement.addEventListener('mousemove', e =>{
+        box.forEach(element=>{
+            const rect =element.getBoundingClientRect();
+            const x= e.clientX -rect.left;
+            const y= e.clientY -rect.top;
+            element.style.transform=`rotateX(${y /30}deg) 
+            rotateY(${x /40}deg)`;
+        });
+    });
+
+
+  

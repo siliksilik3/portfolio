@@ -188,6 +188,7 @@ li{
  width: 30vw;
  padding-bottom: 1vh;
  text-align: center;
+ transition: transform 0.1s ease-out;
 }
 .box > *{
     color: rgb(27, 24, 24);
@@ -200,24 +201,6 @@ li{
     align-self: flex-start;
     
 }
-
-
-.box:hover{
-    animation: glitch 2s  linear infinite;
-}
-@keyframes glitch{
-    2%,64%{
-      transform: translate(2px,0) skew(0deg);
-    }
-    4%,60%{
-      transform: translate(-2px,0) skew(0deg);
-    }
-    62%{
-      transform: translate(0,0) skew(5deg); 
-    }
-  }
-  
-
 
  #contact{
     z-index: 7;
@@ -336,11 +319,13 @@ li{
         font-size: 0.9rem;
     }
     #right{
-        gap: 1px;
         margin:0;
     }
+    #right > .btn{
+        margin-left: 5px;
+    }
     #right + *{
-        padding-right: 1vw;  
+        padding-right: 1rem;  
     }
     .btn{
         height: fit-content;
